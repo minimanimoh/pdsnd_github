@@ -13,3 +13,6 @@ data files: chicago.csv, new_york_city.csv, washington.csv.
 
 ### Credits
 [Udacity Programming for Data Science online course](https://classroom.udacity.com/nanodegrees/nd104/dashboard/overview).
+
+### Revision
+Version 0.0.1
