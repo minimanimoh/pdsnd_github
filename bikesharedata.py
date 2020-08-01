@@ -8,6 +8,9 @@ month_to_index = {'january':1,'february':2,'march':3,'april':4,'may':5,'june:':6
 day_to_index = {'monday':0, 'tuesday':1, 'wednesday':2, 'thursday':3, 'friday':4, 'saturday':5,'sunday':6}
 time_range_to_letters = {'month':'M','day':'D','both':'B','none':'N'}
 
+def print_hyphen():
+    print('-'*40)
+
 def get_file_name():
 
     '''Asks the user to enter a city name and returns the corressponding file name to analyze the bike share data from.
@@ -185,7 +188,7 @@ def print_column_count(df,column_name):
     values = df[column_name].value_counts().values.tolist()
 
     print('Here is the count for all unique values in {}'.format(column_name))
-    for i in range(0,len(types)):
+    for i in types :
         print("{} ---> {}".format(types[i],values[i]))
     print("\n")
 
@@ -216,7 +219,7 @@ def get_filters():
         month = -1
         day = -1
 
-    print('-'*40)
+    print_hyphen()
     return city, month, day
 
 def load_data(city, month, day):
@@ -309,7 +312,7 @@ def time_stats(df):
     get_most_common_hour(df)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print_hyphen()
 
 def station_stats(df):
     """Displays statistics on the most common stations and trip."""
@@ -329,7 +332,7 @@ def station_stats(df):
     print("The most frequent combination of start station and end station trip is from {} to {}.\n".format(trip[0],trip[1]))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print_hyphen()
 
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
@@ -346,7 +349,7 @@ def trip_duration_stats(df):
     print('The mean travel duration is {} minutes.\n'.format(durations[1]))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print_hyphen()
 
 def user_stats(df,city):
     """Displays statistics on bikeshare users."""
@@ -367,7 +370,7 @@ def user_stats(df,city):
         print("The most common birth year is {}.\nThe oldest rider was born in the year {}.\nThe youngest rider was born in the year {}.".format(years[0],years[1],years[2]))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print_hyphen()
 
 
 
